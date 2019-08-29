@@ -31,7 +31,7 @@ const chart = lightningChart().ChartXY({
         cursor.disposeTickMarkerY()
         cursor.setGridStrokeYStyle(emptyLine)
     })
-    // Preventing x-axis Tick from getting cut at the edge
+    // Modify the padding of the chart.
     .setPadding({
         right: 42
     })
@@ -42,7 +42,7 @@ chart.getDefaultAxisX()
     // View fits 5 minutes.
     .setInterval(0, fiveMinutesInMs)
 
-// show title 'USD on Y axis
+// Show title 'USD' on Y axis.
 chart.getDefaultAxisY()
     .setTitle('USD')
 
@@ -64,6 +64,8 @@ const ohlcSeriesAutoPacking = chart.addOHLCSeries(
 
 const add = (points) => {
     lineSeries.add(points)
+    // With automatic packing, the add method accepts data points that use the {x, y} format (for example, {x: time, y: measurement}).
+    // OHLC Series can automatically pack these raw measurements into OHLC data.
     ohlcSeriesAutoPacking.add(points)
 }
 
