@@ -76,8 +76,8 @@ Direct developer email support can be purchased through a [Support Plan][4] or b
 [3]: https://stackoverflow.com/questions/tagged/lightningchart
 [4]: https://www.arction.com/support-services/
 
-[AxisTickStrategies]: https://www.arction.com/lightningchart-js-api-documentation/v1.0.1/globals.html#axistickstrategies
-[ChartXY]: https://www.arction.com/lightningchart-js-api-documentation/v1.0.1/classes/chartxy.html
-[LineSeries]: https://www.arction.com/lightningchart-js-api-documentation/v1.0.1/classes/lineseries.html
-[OHLCSeries]: https://www.arction.com/lightningchart-js-api-documentation/v1.0.1/classes/chartxy.html#addohlcseries
-[OHLCSeriesTypes]: https://www.arction.com/lightningchart-js-api-documentation/v1.0.1/globals.html#ohlcseriestypes
+[AxisTickStrategies]: https://www.arction.com/lightningchart-js-api-documentation/v1.1.0/globals.html#axistickstrategies
+[ChartXY]: https://www.arction.com/lightningchart-js-api-documentation/v1.1.0/classes/chartxy.html
+[LineSeries]: https://www.arction.com/lightningchart-js-api-documentation/v1.1.0/classes/lineseries.html
+[OHLCSeries]: https://www.arction.com/lightningchart-js-api-documentation/v1.1.0/classes/chartxy.html#addohlcseries
+[OHLCSeriesTypes]: https://www.arction.com/lightningchart-js-api-documentation/v1.1.0/globals.html#ohlcseriestypes
