@@ -1,4 +1,4 @@
-# OHLC series automatic packing
+# OHLC Series Automatic Packing
 
 This demo application belongs to the set of examples for LightningChart JS, data visualization library for JavaScript.
 
@@ -14,7 +14,8 @@ The demo can be used as an example or a seed project. Local execution requires t
 
 - The application is available at *http://localhost:8080* in your browser, webpack-dev-server provides hot reload functionality.
 
-### Description
+
+## Description
 
 This example shows real-time OHLC-packing using a variant of OHLC-series.
 
@@ -48,15 +49,17 @@ Supplied points are packed by columns, within which the Y-values are mapped to o
 
 ![](./assets/ohlcPacking.png)
 
-### API links
-* XY cartesian chart: [ChartXY][]
-* Axis tick strategies: [AxisTickStrategies][]
-* Freeform line series: [LineSeries][]
-* OHLC series: [OHLCSeries][]
-* OHLC series types: [OHLCSeriesTypes][]
+
+## API Links
+
+* XY cartesian chart: [ChartXY]
+* Axis tick strategies: [AxisTickStrategies]
+* Freeform line series: [LineSeries]
+* OHLC series: [OHLCSeries]
+* OHLC series types: [OHLCSeriesTypes]
 
 
-### Support
+## Support
 
 If you notice an error in the example code, please open an issue on [GitHub][0] repository of the entire example.
 
@@ -68,16 +71,18 @@ If you think you found a bug in the LightningChart JavaScript library, please co
 
 Direct developer email support can be purchased through a [Support Plan][4] or by contacting sales@arction.com.
 
-© Arction Ltd 2009-2019. All rights reserved.
-
 [0]: https://github.com/Arction/
 [1]: https://www.arction.com/lightningchart-js-api-documentation/
 [2]: https://www.arction.com
 [3]: https://stackoverflow.com/questions/tagged/lightningchart
 [4]: https://www.arction.com/support-services/
 
-[AxisTickStrategies]: https://www.arction.com/lightningchart-js-api-documentation/v1.1.0/globals.html#axistickstrategies
-[ChartXY]: https://www.arction.com/lightningchart-js-api-documentation/v1.1.0/classes/chartxy.html
-[LineSeries]: https://www.arction.com/lightningchart-js-api-documentation/v1.1.0/classes/lineseries.html
-[OHLCSeries]: https://www.arction.com/lightningchart-js-api-documentation/v1.1.0/classes/chartxy.html#addohlcseries
-[OHLCSeriesTypes]: https://www.arction.com/lightningchart-js-api-documentation/v1.1.0/globals.html#ohlcseriestypes
+© Arction Ltd 2009-2019. All rights reserved.
+
+
+[ChartXY]: https://www.arction.com/lightningchart-js-api-documentation/v1.2.0/classes/chartxy.html
+[AxisTickStrategies]: https://www.arction.com/lightningchart-js-api-documentation/v1.2.0/globals.html#axistickstrategies
+[LineSeries]: https://www.arction.com/lightningchart-js-api-documentation/v1.2.0/classes/lineseries.html
+[OHLCSeries]: https://www.arction.com/lightningchart-js-api-documentation/v1.2.0/classes/chartxy.html#addohlcseries
+[OHLCSeriesTypes]: https://www.arction.com/lightningchart-js-api-documentation/v1.2.0/globals.html#ohlcseriestypes
+

@@ -1,4 +1,4 @@
-/**
+/*
  * LightningChartJS example that showcases real-time OHLC-packing using a variant of OHLC-series.
  */
 // Import LightningChartJS
