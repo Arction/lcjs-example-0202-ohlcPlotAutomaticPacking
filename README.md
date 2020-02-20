@@ -43,7 +43,7 @@ series.add([
 ])
 ```
 
-### Packing logic
+## Packing logic
 
 Supplied points are packed by columns, within which the Y-values are mapped to open, high, low and close -values, which are used to draw *OHLCFigures*.
 
