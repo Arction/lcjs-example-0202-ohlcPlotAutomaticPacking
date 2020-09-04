@@ -10,7 +10,8 @@ const {
     AxisTickStrategies,
     AxisScrollStrategies,
     OHLCSeriesTypes,
-    emptyLine
+    emptyLine,
+    Themes
 } = lcjs
 
 // Import data-generator from 'xydata'-library.
@@ -22,19 +23,29 @@ const {
 const fiveMinutesInMs = 5 * 60 * 1000
 const dateOrigin = new Date(new Date().getTime() - fiveMinutesInMs)
 
-// Create a XY Chart with DateTime X-axis using previously defined origin.
+// Create a XY Chart.
 const chart = lightningChart().ChartXY({
-    defaultAxisXTickStrategy: AxisTickStrategies.DateTime(dateOrigin)
+    // theme: Themes.dark
 })
+// Use DateTime X-axis using previously defined origin.
+chart
+    .getDefaultAxisX()
+    .setTickStrategy(
+        AxisTickStrategies.DateTime,
+        (tickStrategy) => tickStrategy.setDateOrigin(dateOrigin)
+    )
+
+// Set chart title and modify the padding of the chart.
+chart
     .setTitle('Realtime OHLC and line')
-    .setAutoCursor(cursor => {
-        cursor.disposeTickMarkerY()
-        cursor.setGridStrokeYStyle(emptyLine)
-    })
-    // Modify the padding of the chart.
     .setPadding({
         right: 42
     })
+// Modify AutoCursor to only show TickMarker and Gridline over X Axis.
+chart.setAutoCursor(cursor => {
+    cursor.disposeTickMarkerY()
+    cursor.setGridStrokeYStyle(emptyLine)
+})
 
 // Configure X-axis to be progressive.
 chart.getDefaultAxisX()

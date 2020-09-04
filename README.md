@@ -54,11 +54,11 @@ Supplied points are packed by columns, within which the Y-values are mapped to o
 
 ## API Links
 
-* XY cartesian chart: [ChartXY]
-* Axis tick strategies: [AxisTickStrategies]
-* Freeform line series: [LineSeries]
-* OHLC series: [OHLCSeries]
-* OHLC series types: [OHLCSeriesTypes]
+* [XY cartesian chart]
+* [Axis tick strategies]
+* [Freeform line series]
+* [OHLC series]
+* [OHLC series types]
 
 
 ## Support
@@ -82,9 +82,9 @@ Direct developer email support can be purchased through a [Support Plan][4] or b
 © Arction Ltd 2009-2020. All rights reserved.
 
 
-[ChartXY]: https://www.arction.com/lightningchart-js-api-documentation/v1.3.0/classes/chartxy.html
-[AxisTickStrategies]: https://www.arction.com/lightningchart-js-api-documentation/v1.3.0/globals.html#axistickstrategies
-[LineSeries]: https://www.arction.com/lightningchart-js-api-documentation/v1.3.0/classes/lineseries.html
-[OHLCSeries]: https://www.arction.com/lightningchart-js-api-documentation/v1.3.0/classes/chartxy.html#addohlcseries
-[OHLCSeriesTypes]: https://www.arction.com/lightningchart-js-api-documentation/v1.3.0/globals.html#ohlcseriestypes
+[XY cartesian chart]: https://www.arction.com/lightningchart-js-api-documentation/v2.0.0/classes/chartxy.html
+[Axis tick strategies]: https://www.arction.com/lightningchart-js-api-documentation/v2.0.0/globals.html#axistickstrategies
+[Freeform line series]: https://www.arction.com/lightningchart-js-api-documentation/v2.0.0/classes/lineseries.html
+[OHLC series]: https://www.arction.com/lightningchart-js-api-documentation/v2.0.0/classes/chartxy.html#addohlcseries
+[OHLC series types]: https://www.arction.com/lightningchart-js-api-documentation/v2.0.0/globals.html#ohlcseriestypes
 
