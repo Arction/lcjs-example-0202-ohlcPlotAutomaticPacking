@@ -25,7 +25,7 @@ const dateOrigin = new Date(new Date().getTime() - fiveMinutesInMs)
 
 // Create a XY Chart.
 const chart = lightningChart().ChartXY({
-    // theme: Themes.dark
+    // theme: Themes.darkGold
 })
 // Use DateTime X-axis using previously defined origin.
 chart
