@@ -4,20 +4,14 @@
 // Import LightningChartJS
 const lcjs = require('@arction/lcjs')
 
+// Import xydata
+const xydata = require('@arction/xydata')
+
 // Extract required parts from LightningChartJS.
-const {
-    lightningChart,
-    AxisTickStrategies,
-    AxisScrollStrategies,
-    OHLCSeriesTypes,
-    emptyLine,
-    Themes
-} = lcjs
+const { lightningChart, AxisTickStrategies, AxisScrollStrategies, OHLCSeriesTypes, emptyLine, Themes } = lcjs
 
 // Import data-generator from 'xydata'-library.
-const {
-    createProgressiveTraceGenerator
-} = require('@arction/xydata')
+const { createProgressiveTraceGenerator } = xydata
 
 // Decide on an origin for DateTime axis ( cur time - 5 minutes ).
 const fiveMinutesInMs = 5 * 60 * 1000
@@ -28,48 +22,40 @@ const chart = lightningChart().ChartXY({
     // theme: Themes.darkGold
 })
 // Use DateTime X-axis using previously defined origin.
-chart
-    .getDefaultAxisX()
-    .setTickStrategy(
-        AxisTickStrategies.DateTime,
-        (tickStrategy) => tickStrategy.setDateOrigin(dateOrigin)
-    )
+chart.getDefaultAxisX().setTickStrategy(AxisTickStrategies.DateTime, (tickStrategy) => tickStrategy.setDateOrigin(dateOrigin))
 
 // Set chart title and modify the padding of the chart.
-chart
-    .setTitle('Realtime OHLC and line')
-    .setPadding({
-        right: 42
-    })
+chart.setTitle('Realtime OHLC and line').setPadding({
+    right: 42,
+})
 // Modify AutoCursor to only show TickMarker and Gridline over X Axis.
-chart.setAutoCursor(cursor => {
-    cursor.disposeTickMarkerY()
+chart.setAutoCursor((cursor) => {
+    cursor.setTickMarkerYVisible(false)
     cursor.setGridStrokeYStyle(emptyLine)
 })
 
 // Configure X-axis to be progressive.
-chart.getDefaultAxisX()
+chart
+    .getDefaultAxisX()
     .setScrollStrategy(AxisScrollStrategies.progressive)
     // View fits 5 minutes.
-    .setInterval(0, fiveMinutesInMs)
+    .setInterval({ start: 0, end: fiveMinutesInMs, stopAxisAfter: false })
 
 // Show title 'USD' on Y axis.
-chart.getDefaultAxisY()
-    .setTitle('USD')
+chart.getDefaultAxisY().setTitle('USD')
 
 // Add underlying line series.
-const lineSeries = chart.addLineSeries()
+const lineSeries = chart
+    .addLineSeries()
     .setCursorEnabled(false)
-    .setStrokeStyle((strokeStyle) => strokeStyle
-        .setFillStyle(fill => fill.setA(70))
-        .setThickness(1)
-    )
+    .setStrokeStyle((strokeStyle) => strokeStyle.setFillStyle((fill) => fill.setA(70)).setThickness(1))
 
 // Add OHLC series with automatic packing (so we can feed it XY-points just like for the line series).
-const ohlcSeriesAutoPacking = chart.addOHLCSeries(
-    // Specify type of OHLC-series for adding points
-    { seriesConstructor: OHLCSeriesTypes.AutomaticPacking }
-)
+const ohlcSeriesAutoPacking = chart
+    .addOHLCSeries(
+        // Specify type of OHLC-series for adding points
+        { seriesConstructor: OHLCSeriesTypes.AutomaticPacking },
+    )
     // Set packing resolution to 100 ms so we can zoom to full resolution.
     .setPackingResolution(100)
 
@@ -85,10 +71,13 @@ createProgressiveTraceGenerator()
     .setNumberOfPoints(10000)
     .generate()
     .toPromise()
-    .then((data) => data.map((p) => ({
-        // Resolution = 100 ms.
-        x: p.x * 100, y: p.y
-    })))
+    .then((data) =>
+        data.map((p) => ({
+            // Resolution = 100 ms.
+            x: p.x * 100,
+            y: p.y,
+        })),
+    )
     .then((data) => {
         // Add 5 minutes worth of points immediately ( to simulate previous data ).
         add(data.splice(0, Math.round(5 * 60 * 10)))
