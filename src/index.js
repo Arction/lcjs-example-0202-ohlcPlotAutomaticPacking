@@ -15,7 +15,8 @@ const { createProgressiveTraceGenerator } = xydata
 
 // Decide on an origin for DateTime axis ( cur time - 5 minutes ).
 const fiveMinutesInMs = 5 * 60 * 1000
-const dateOrigin = new Date(new Date().getTime() - fiveMinutesInMs)
+const dateOrigin = new Date(Date.now() - fiveMinutesInMs)
+const dateOriginTime = dateOrigin.getTime()
 
 // Create a XY Chart.
 const chart = lightningChart().ChartXY({
@@ -71,10 +72,17 @@ createProgressiveTraceGenerator()
     .setNumberOfPoints(10000)
     .generate()
     .toPromise()
+    // Map random generated data to start from a particular date with the frequency of 100 ms
     .then((data) =>
         data.map((p) => ({
-            // Resolution = 100 ms.
-            x: p.x * 100,
+            x: dateOriginTime + p.x * 100,
+            y: p.y,
+        })),
+    )
+    // When data origin is used (required for DateTime axis range smaller than 1 day), time coordinate has to be shifted by date origin.
+    .then((data) =>
+        data.map((p) => ({
+            x: p.x - dateOriginTime,
             y: p.y,
         })),
     )

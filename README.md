@@ -21,6 +21,9 @@ The demo can be used as an example or a seed project. Local execution requires t
 
 This example shows real-time OHLC-packing using a variant of OHLC-series.
 
+**Please note that using LightningChart JS for Trading use cases requires a special license agreement.**
+For more information, please [contact us](https://lightningchart.com/contact/).
+
 ## LightningChart JS OHLC Series with Automatic Packing
 
 LightningChart JS includes a variant of the OHLC series which allows inputting close prices only which results in the corresponding OHLC data being automatically calculated.
@@ -86,9 +89,9 @@ Direct developer email support can be purchased through a [Support Plan][4] or b
 © LightningChart Ltd 2009-2022. All rights reserved.
 
 
-[XY cartesian chart]: https://lightningchart.com/lightningchart-js-api-documentation/v4.0.0/classes/ChartXY.html
-[Axis tick strategies]: https://lightningchart.com/lightningchart-js-api-documentation/v4.0.0/variables/AxisTickStrategies.html
-[Freeform line series]: https://lightningchart.com/lightningchart-js-api-documentation/v4.0.0/classes/LineSeries.html
-[OHLC series]: https://lightningchart.com/lightningchart-js-api-documentation/v4.0.0/classes/ChartXY.html#addOHLCSeries
-[OHLC series types]: https://lightningchart.com/lightningchart-js-api-documentation/v4.0.0/variables/OHLCSeriesTypes.html
+[XY cartesian chart]: https://lightningchart.com/lightningchart-js-api-documentation/v4.1.0/classes/ChartXY.html
+[Axis tick strategies]: https://lightningchart.com/lightningchart-js-api-documentation/v4.1.0/variables/AxisTickStrategies.html
+[Freeform line series]: https://lightningchart.com/lightningchart-js-api-documentation/v4.1.0/classes/LineSeries.html
+[OHLC series]: https://lightningchart.com/lightningchart-js-api-documentation/v4.1.0/classes/ChartXY.html#addOHLCSeries
+[OHLC series types]: https://lightningchart.com/lightningchart-js-api-documentation/v4.1.0/variables/OHLCSeriesTypes.html
 
