@@ -40,7 +40,7 @@ chart
     .getDefaultAxisX()
     .setScrollStrategy(AxisScrollStrategies.progressive)
     // View fits 5 minutes.
-    .setInterval({ start: 0, end: fiveMinutesInMs, stopAxisAfter: false })
+    .setDefaultInterval((state) => ({ end: state.dataMax, start: (state.dataMax ?? 0) - fiveMinutesInMs, stopAxisAfter: false }))
 
 // Show title 'USD' on Y axis.
 chart.getDefaultAxisY().setTitle('USD')
