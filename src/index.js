@@ -19,7 +19,9 @@ const dateOrigin = new Date(Date.now() - fiveMinutesInMs)
 const dateOriginTime = dateOrigin.getTime()
 
 // Create a XY Chart.
-const chart = lightningChart().ChartXY({
+const chart = lightningChart({
+            resourcesBaseUrl: new URL(document.head.baseURI).origin + new URL(document.head.baseURI).pathname + 'resources/',
+        }).ChartXY({
     theme: Themes[new URLSearchParams(window.location.search).get('theme') || 'darkGold'] || undefined,
 })
 // Use DateTime X-axis using previously defined origin.
