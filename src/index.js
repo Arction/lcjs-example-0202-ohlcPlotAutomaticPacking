@@ -2,10 +2,10 @@
  * LightningChartJS example that showcases real-time OHLC-packing using a variant of OHLC-series.
  */
 // Import LightningChartJS
-const lcjs = require('@arction/lcjs')
+const lcjs = require('@lightningchart/lcjs')
 
 // Import xydata
-const xydata = require('@arction/xydata')
+const xydata = require('@lightningchart/xydata')
 
 // Extract required parts from LightningChartJS.
 const { lightningChart, AxisTickStrategies, AxisScrollStrategies, OHLCSeriesTypes, emptyLine, Themes } = lcjs
@@ -32,7 +32,7 @@ chart.setTitle('Realtime OHLC and line').setPadding({
     right: 42,
 })
 // Modify AutoCursor to only show TickMarker and Gridline over X Axis.
-chart.setAutoCursor((cursor) => {
+chart.setCursor((cursor) => {
     cursor.setTickMarkerYVisible(false)
     cursor.setGridStrokeYStyle(emptyLine)
 })
